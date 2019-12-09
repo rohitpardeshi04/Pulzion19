@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Events</title>
+
+  <script src="./js/classie.js"></script>
+  <script src="./js/gnmenu.js"></script>
+  <link rel="stylesheet" href="style.css">
+
+
+
+
+  <meta name="theme-color" content="#00ccff" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="./js/script1.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="./css/component.css" />
+  <link rel="stylesheet" type="text/css" href="./css/demo.css" />
+  <link rel="stylesheet" type="text/css" href="./css/normalize.css" />
+
+  <style>
+    /*second button*/
+
+    @media only screen and (min-width: 400px) and (max-width: 600px) {
+      body {
+        background-color: lightblue;
+      }
+    }
+
+    @media all and (max-width: 400px) {
+      .nifty-modal {
+        top: 55%;
+        height: 80%;
+      }
+    }
+
+    @media all and (max-width: 600px) {
+      .gn-menu-main {
+        top: 3%;
+      }
+    }
+
+    @-webkit-keyframes fadeInRight {
+      0% {
+        opacity: 0;
+        left: 20%;
+      }
+
+      100% {
+        opacity: 1;
+        left: 0;
+      }
+    }
+
+    @keyframes fadeInRight {
+      0% {
+        opacity: 0;
+        left: 20%;
+      }
+
+      100% {
+        opacity: 1;
+        left: 0;
+      }
+    }
+
+    @media (min-width: 400px) and (min-width: 600px) {}
+
+    .box-outer {
+      overflow: hidden;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    html {
+      width: 100%;
+      height: 100%;
+    }
+
+    .position {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      margin-top: 25px;
+      color: cyan;
+    }
+
+    .spot {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .svg-wrapper {
+      margin-top: 0;
+      position: relative;
+      width: 130px;
+      height: 40px;
+      display: inline-block;
+      border-radius: 3px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    /*
+  This is where we define the fill, color, thickness,
+  and stroke pattern of the SVG when there is no hover.
+  The dasharray and offset together define the line position
+  under the words. Here's also where the transition speed is set.
+*/
+    #shape {
+      stroke-width: 6px;
+      fill: transparent;
+      stroke: #009FFD;
+      stroke-dasharray: 85 400;
+      stroke-dashoffset: -190;
+      transition: 1s all ease;
+    }
+
+    /* 
+    Pushing the text up into the SVG. Without this the
+    text would be below the div's.
+*/
+    #text {
+      margin-top: -35px;
+      text-align: center;
+    }
+
+    #text a {
+      color: black;
+      text-decoration: none;
+      font-weight: 100;
+      font-size: 1.1em;
+    }
+
+    /* 
+    Changing the shape on hover. I change the color of the stroke,
+make it thinner, then set it to again wrap around the entire parent element.
+*/
+    .svg-wrapper:hover #shape {
+      stroke-dasharray: 50 0;
+      stroke-width: 3px;
+      stroke-dashoffset: 0;
+      stroke: #06D6A0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box-outer {
+      overflow: hidden;
+      margin: 2%;
+    }
+
+    .main_box {
+      position: relative;
+      border: 5px solid #00ccff;
+    }
+
+    .bar {
+      position: absolute;
+      width: 50px;
+      height: 5px;
+      background: black;
+      transition: all 1.2s linear;
+      -webkit-animation-duration: 1.2s;
+      animation-duration: 1.2s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+    }
+
+    .bar.delay {
+      animation-delay: 0.6s;
+      -webkit-animation-delay: 0.6s;
+    }
+
+    .top {
+      top: -5px;
+      left: -5px;
+    }
+
+    .right {
+      top: 18px;
+      right: -28px;
+      transform: rotate(90deg);
+    }
+
+    .bottom {
+      bottom: -5px;
+      left: -5px;
+    }
+
+    .left {
+      top: 18px;
+      left: -28px;
+      transform: rotate(90deg);
+    }
+
+    @-webkit-keyframes h-move {
+      0% {
+        left: -5px;
+      }
+
+      100% {
+        left: 270px;
+      }
+    }
+
+    @keyframes h-move {
+      0% {
+        left: -5px;
+      }
+
+      100% {
+        left: 270px;
+      }
+    }
+
+    .top,
+    .bottom {
+      -webkit-animation-name: h-move;
+      animation-name: h-move;
+    }
+
+    @-webkit-keyframes v-move {
+      0% {
+        top: -5px;
+      }
+
+      100% {
+        top: 298px;
+      }
+    }
+
+    @keyframes v-move {
+      0% {
+        top: -5px;
+      }
+
+      100% {
+        top: 298px;
+      }
+    }
+
+    .right,
+    .left {
+      -webkit-animation-name: v-move;
+      animation-name: v-move;
+    }
+
+    .grid {
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+
+    @media all and (max-width: 600px) and (min-width: 350px) {
+      .box-outer {
+        overflow: hidden;
+        margin-left: 8%;
+        position: relative;
+      }
+
+      .grid {
+        padding-left: 2.5%;
+        overflow-x: hidden;
+      }
+    }
+
+    @media all and (max-width: 300px) {
+      .box-outer {
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+      }
+
+      .grid {
+        padding-left: 25px;
+        overflow-x: hidden;
+      }
+    }
+
+    h3 {
+      color: #222;
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      font-family: Equinox;
+    }
+
+    .btn-outline-primary {
+      border-color: #00ccff;
+    }
+
+    .btn-outline-primary:hover {
+      color: #fff;
+      background-color: #00ccff;
+      border-color: #00ccff;
+    }
+
+    .footer {
+      position: absolute;
+      background: #000;
+      color: #fff;
+      min-height: 7vh;
+      width: 100vw;
+
+    }
+
+    .footer p {
+      position: relative;
+      margin-top: 2.5vh;
+    }
+  </style>
+</head>
+
+<body>
+
+  <img src="../res/img/b.png" id="part">
+  <div id="particles-js"></div>
+  <div class="position">
+    <!-- slide navbar -->
+    <div class="container_nav">
+      <ul id="gn-menu" class="gn-menu-main btn btn-outline-primary">
+        <li class="gn-trigger">
+          <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+          <nav class="gn-menu-wrapper" id="navbar">
+            <div class="gn-scroller">
+              <ul class="gn-menu">
+                <li><a id="close" class="gn-icon btn " onclick="closeNav()"
+                    style="display: inline-block; font-size: 5vh; float: left; font-family: 'eq';">x </a></li>
+                <li><a></a></li>
+                <li><a href="../" class="gn-icon gn-icon-home" style="font-family: 'eq';">Home</a> </li>
+                <li><a href="../Event/" class="gn-icon gn-icon-event" style="font-family: 'eq';">Events</a></li>
+                <li><a href="../Sponsor/" class="gn-icon gn-icon-sponsor" style="font-family: 'eq';">Sponsors</a></li>
+                <li><a href="../About-us/" class="gn-icon gn-icon-about" style="font-family: 'eq';">About Us</a></li>
+                <li><a href="../Team/" class="gn-icon gn-icon-team" style="font-family: 'eq';">Meet Our Team</a> </li>
+              </ul>
+            </div>
+          </nav>
+        </li>
+      </ul>
+    </div>
+
+    <!-- exit slide navbar -->
+
+    <div class="section-title text-center center"
+      style="position: relative; font-family: 'eq'; color: cyan; font-size: 5vh;">
+      <h1>Events</h1>
+    </div>
+
+    <!--start button, nothing above this is necessary -->
+    <div class="container">
+      <div class="row button-group filters-button-group">
+        <div class="col my-3 button is-checked" data-filter="*">
+          <div class="svg-wrapper">
+            <svg height="40" width="130" xmlns="http://www.w3.org/2000/svg">
+              <rect id="shape" height="40" width="130" />
+              <div id="text">
+                <span class="spot"></span>All
+              </div>
+            </svg>
+          </div>
+        </div>
+        <!--Next button -->
+        <div class="col my-3 button" data-filter=".tech">
+          <div class="svg-wrapper">
+            <svg height="40" width="130" xmlns="http://www.w3.org/2000/svg">
+              <rect id="shape" height="40" width="130" />
+              <div id="text">
+                <span class="spot"></span>Technical
+              </div>
+            </svg>
+          </div>
+        </div>
+        <!--Next button -->
+        <div class="col my-3 button" data-filter=".nontech">
+          <div class="svg-wrapper">
+            <svg height="40" width="130" xmlns="http://www.w3.org/2000/svg">
+              <rect id="shape" height="40" width="130" />
+              <div id="text">
+                <span class="spot"></span>Non-Technical
+              </div>
+            </svg>
+          </div>
+        </div>
+        <!--Next button -->
+        <div class="col my-3 button" data-filter=".work">
+          <div class="svg-wrapper">
+            <svg height="40" width="130" xmlns="http://www.w3.org/2000/svg">
+              <rect id="shape" height="40" width="130" />
+              <div id="text">
+                <span class="spot"></span>Workshop
+              </div>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid row">
+    <div class='box-outer element-item tech'>
+      <div class='main_box jc' data-trigger='modal' data-target='#modal-jc'>
+        <div class='bar top'></div>
+        <div class='bar right delay'></div>
+        <div class='bar bottom delay'></div>
+        <div class='bar left'></div>
+      </div>
+      <div class="nifty-modal d-slit" id="modal-jc">
+        <div class="md-content">
+          <div class='md-title'>
+
+            <button type="button" class="md-close side" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4>Just Coding</h4>
+          </div>
+
+          <strong><i>while(!All-Clear()) try();</strong></i><br>
+          Just Coding is a competition where the participants will have to write correct and efficient codes for the
+          given set of problem statements. <br>
+          Just Coding Wildcard:<br>
+          This is an online coding round which will be hosted on Codechef. The winning team will get a direct entry in
+          the final round. Also, top 2 teams from PICT FE/SE and TE/BE groups will get qualified for the final
+          round.<br>
+          To play the wildcard contest <a target="_blank"
+            href="https://www.codechef.com/JCWR2019?utm_source=contest_listing&utm_medium=link&utm_campaign=JCWR2019">
+            Click Here.</a> <br>
+          Round 1:<br>
+          This is a coding round where teams have to code for given problems in a limited time.<br>
+          Round 2:<br>
+          Qualifying teams will then have to code for the problems of higher difficulty level in a limited time.
+          <br><br><strong>Rules and Regulations-</strong>
+          <ol>
+            <li>1. Both the groups, FE-SE and TE-BE, will be given maximum 2 hours to complete.</li>
+            <li>2. Permitted languages will be C, C++, Python and Java.</li>
+            <li>3.Any offline IDE can be used but use of internet and any online IDE other than HackerRank is
+              prohibited.</li>
+          </ol>
+          <strong>Team Distribution-</strong>
+          <ol>
+            <li>FE-SE (Junior Team): Teams of 2 </li>
+            <li>TE-BE (Senior Team): Teams of 2 </li>
+            <li>Individual</li>
+          </ol>
+          <strong>Fees:</strong> Rs.100 per team (Juniors/Seniors) and Individual 80/-<br>
+
+
+        </div>
+      </div>
+    </div>
+    <div class='box-outer element-item tech'>
+      <div class='main_box bg' data-trigger='modal' data-target='#modal-bg'>
+        <div class='bar top'></div>
+        <div class='bar right delay'></div>
+        <div class='bar bottom delay'></div>
+        <div class='bar left'></div>
+      </div>
+      <div class="nifty-modal d-slit" id="modal-bg">
+        <div class="md-content">
+          <div class='md-title'>
+
+            <button type="button" class="md-close side" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4>Bug-Off</h4>
+          </div>
+          <strong><i>Truth can be found within the code!</i></strong><br>
+          Bug-off is a competition where the participants are expected to remove the bugs from the given set of codes
+          and achieve the desired output within the time limit. The participants (Team/Individual) with the maximum
+          number of error-free codes win the contest.<br>
+          Round 1:<br>
+          In this round participants will have to answer series of mcq’s based on Understanding Of Programming Language
+          And Logic.<br>
+          Round 2:<br>
+          Here the participants will have to debug the given code and make minimal changes to pass the given
+          constraints.<br><br>
+
+          <strong>Rules and Regulations-</strong><br>
+          <ol>
+            <li>1. Both the groups, FE-SE and TE-BE, will be given maximum 30 minutes to compete in the first round.
+            </li>
+            <li>2. FE-SE participants will be given a choice between C/C++ language.</li>
+            <li>3. TE/BE participants can submit the solution in C/C++/Java.</li>
+            <li>4. Second Round Will Be Of Duration: 1 hour .</li>
+
+
+          </ol><br>
+          <strong>Team Distribution-</strong><br>
+          <ol>
+            <li>FE-SE (Junior Team): Team of 2 </li>
+            <li>TE-BE (Senior Team): Team of 2 </li>
+            <li>Individual</li>
+          </ol>
+          <strong>Fees:</strong>Rs.100 per team (Juniors/Seniors) and Individual 80/-<br><br>
+
+        </div>
+      </div>
+    </div>
+
+    <div class='box-outer element-item tech'>
+      <div class='main_box cb' data-trigger='modal' data-target='#modal-cb'>
+        <div class='bar top'></div>
+        <div class='bar right delay'></div>
+        <div class='bar bottom delay'></div>
+        <div class='bar left'></div>
+      </div>
+      <div class="nifty-modal d-slit" id="modal-cb">
+        <div class="md-content">
+          <div class='md-title'>
+
+            <button type="button" class="md-close side" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4>Code Buddy</h4>
+          </div>
+          <strong><i>Be the semicolon to your Buddy’s code!</strong></i><br>
+          A coding competition based on understanding your buddy’s code and continuing his code with speed to get the
+          desired output.<br>
+          Round 1:<br>
+          In this round, your team needs to code fast for 10 easy questions within 30 minutes.<br>
+          Round 2:<br>
+          This is a relay coding round where teams have to solve 2 different problem sets by swapping with their partner
+          in given intervals. <br><br>
+          <strong>Rules and Regulations-</strong><br>
+          <ol>
+            <li>1. Each team will consist of 2 members.</li>
+            <li>2. Team members aren't allowed to communicate with each other during the contest.</li>
+            <li>3. Use of Mobile phones, internet or any other electronic device is prohibited.</li>
+            <li>4. Any type of comments in the code will lead to disqualification of the team.</li>
+            <li>5. The contest duration is 60 minutes and the partners are required to exchange their seats after every
+              20 minutes.</li>
+            <li>6. The decision of organizers will be final and binding on all participants.</li>
+          </ol>
+          <br>
+          <strong>Team Distribution-</strong><br>
+          <ol>
+            <li>FE/SE (Junior Team): Team of 2</li>
+            <li>TE/BE (Senior Team): Team of 2 </li>
+          </ol>
+          <strong>Fees:</strong> Rs.100 per team (Juniors/Seniors).<br><br>
+
+        </div>
+      </div>
+    </div>
+
+    <div class='box-outer element-item tech'>
+      <div class='main_box rc' data-trigger='modal' data-target='#modal-rc'>
+        <div class='bar top'></div>
+        <div class='bar right delay'></div>
+        <div class='bar bottom delay'></div>
+        <div class='bar left'></div>
+      </div>
+      <div class="nifty-modal d-slit" id="modal-rc">
+        <div class="md-content">
+          <div class='md-title'>
+
+            <button type="button" class="md-close side" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4>Recode It</h4>
+          </div>
+
+          <strong><i>Think Perfection, Expect Excellence!</i></strong><br>
+          A competitive coding competition based on perfection along with speed !<br>
+
+          Round 1:<br>
+          This is MCQ round. The participants will be allowed to use computer to code
+          the solution if required or they can solve it on paper.<br>
+          Round 2:Second round a set of executable files will be given.The participants can run the files any number of
+          times they want. From the given custom inputs by the participant they need to figure out the logic of the code
+          of the executable file and code it.<br>
+          <br><br>
+          <strong>Rules and Regulations-</strong><br>
+          <ol>
+            <li>1. Languages allowed are C, C++, Python and Java.</li>
+            <li>2. Use of the internet and any other electronic devices during the contest are not allowed.</li>
+            <li>The decision of the organizers will be final.</li>
+          </ol>
+          <br>
+          <strong>Team Distribution-</strong><br>
+          <ol>
+            <li>FE-SE (Junior Team): Teams of 2</li>
+            <li>TE-BE (Senior Team): Teams of 2</li>
+            <li>Individual</li>
+          </ol>
+          <strong>Fees: </strong>Rs.100 per team (Juniors/Seniors) and Individual 80/-<br><br>
+        </div>
+      </div>
+    </div>
+
+
+    <div class='box-outer element-item tech'>
+      <div class='main_box eq' data-trigger='modal' data-target='#modal-eq'>
+        <div class='bar top'></div>
+        <div class='bar right delay'></div>
+        <div class='bar bottom delay'></div>
+        <div class='bar left'></div>
+      </div>
+      <div class="nifty-modal d-slit" id="modal-eq">
+        <div class="md-content">
+          <div class='md-title'>
+
+            <button type="button" class="md-close side" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4>Electro Quest</h4>
+          </div>
+          <strong><i>Where knowledge meets imagination!</i></strong><br>
+          The first round is a treasure hunt across the campus using deductive EnTC related clues.
+          The qualifying teams would be given problem statements having difficulty level according
+          to the year of the participants. FE and SE/TE students would have to face simple circuit debugging and circuit
+          building problems in the second round.
+          <br><br>
+          <strong>Rules and Regulations-</strong><br>
+          <ol>
+            <li>1. All the teams would be given a maximum of 2.5 hours to finish the treasure hunt. </li>
+            <li>2. Use of Internet or any other resource is allowed during the treasure hunt. </li>
+            <li>3. Only the top 16 teams would qualify for the second round ( 8 from each group). </li>
+            <li>4. The hunt is strictly restricted to the college campus. </li>
+            <li>5. Any help or clarity on the proceedings of the event would be given by volunteers present on spot.
+            </li>
+            <li>6. The winner will be decided depending on the accuracy and the speed of completing the given tasks in
+              both the rounds. </li>
+            <li>7. The decision of the organizers will be final and binding on all participants for the treasure hunt.
+            </li>
+          </ol>
+          <br>
+          <strong>Team Distribution-</strong><br>
+          <ol>
+            <li>FE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Juniors): Team of 2</li>
+            <li>SE/TE (Seniors): Team of 2</li>
+          </ol>
+          <strong>Fees:</strong> Rs.100 per team (Juniors/Seniors).<br><br>
+        </div>
+      </div>
+    </div>
+
+
+    <div class='box-outer element-item tech'>
+      <div class='main_box dq' data-trigger='modal' data-target='#modal-dq'>
+        <div class='bar top'></div>
+        <div class='bar right delay'></div>
+        <div class='bar bottom delay'></div>
+        <div class='bar left'></div>
+      </div>
+      <div class="nifty-modal d-slit" id="modal-dq">
+        <div class="md-content">
+          <div class='md-title'>
+
+            <button type="button" class="md-close side" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4>Data Quest</h4>
+          </div>
+
+          <strong><i> What we have is Data Glut!</i></strong><br>
+          DataQuest is one of its kind data science competition taking place for first time in Pune. Participants will
+          be tested upon their data science and machine learning skills to optimize the given metric for given
+          dataset.<br><br>
+          <strong>Rules and Regulations-</strong><br>
+          <ol>
+            <li>1. This competition will be hosted on Kaggle.</li>
+            <li>2. Problem Statement along with dataset will be released on Kaggle.</li>
+            <li>3. Duration of contest will be 7 days.</li>
+            <li>4. The right to decide optimization metric will be towards judges and it will be final and binding.</li>
+          </ol><br>
+          <strong>Team Distribution-</strong><br>
+          <ol>
+            <li>Team upto 3 members.</li>
+          </ol>
+          <strong>Date:</strong> 24 - 31 Aug. <br><br>
+          <strong>Fees:</strong> Rs.150 per team<br><br>
+        </div>
+      </div>
+    </div>
+
+    <div class='box-outer element-item nontech'>
+      <div class='main_box dx' data-trigger='modal' data-target='#modal-dx'>
+        <div class='bar top'></div>
+        <div class='bar right delay'></div>
+        <div class='bar bottom delay'></div>
+        <div class='bar left'></div>
+      </div>
+      <div class="nifty-modal d-slit" id="modal-dx">
+        <div class="md-content">
+          <div class='md-title'>
+
+            <button type="button" class="md-close side" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4>Dextrous</h4>
+          </div>
+          <strong><i>Show the BEST version of you!</i></strong><br>
+          Dextrous provides you with a unique experience of the standard interviewing procedure comprising an Aptitude
+          Test and a Group Discussion followed by a Personal Interview taken by renowned professionals from the
+          industry.
+          It is truly an opportunity in the form of a mock-interview before your placements.<br><br>
+          <strong>Rules and Regulations-</strong><br>
+          <ol>
+            <li>1. Every participant will be allowed to appear for the Aptitute Test and the Group Discussion.</li>
+            <li>2. Based on the combined score of Aptitude-Test and the Group Discussion, the shortlisted participants
+              can appear for the interview. </li>
+            <li>3. The winner will be decided on the basis of his/her combined performance in the Aptitude-Test, the
+              Group Discussion and the Interview.</li>
+          </ol><br>
+          <strong>Team Distribution-</strong><br>
+          <ol>
+            <li>FE/SE/TE/BE: Individual</li>
+          </ol>
+          <strong>Fees:</strong> Rs.100<br><br>
+        </div>
+      </div>
+    </div>
+
+
+    <div class='box-outer element-item nontech'>
+      <div class='main_box in' data-trigger='modal' data-target='#modal-in'>
+        <div class='bar top'></div>
+        <div class='bar right delay'></div>
+        <div class='bar bottom delay'></div>
+        <div class='bar left'></div>
+      </div>
+      <div class="nifty-modal d-slit" id="modal-in">
+        <div class="md-content">
+          <div class='md-title'>
+
+            <button type="button" class="md-close side" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4>Insight</h4>
+          </div>
+          <strong><i>Talk with the pics!</i></strong><br>
+          Are you in search of a stage for the 'writer' within you? Folks, INSIGHT is then, your apt destination. Give
+          birth to your own piece of literature, let it be a paragraph, a short story or even a poem, relating to the
+          displayed image.
+          Use your creativity to the fullest in this 'unique' competition and unveil the budding writer in you.
+          Unfurl your imagination to the extreme and orchestrate a splendid art of writing at Insight.
+          <br><br>
+          <strong>Rules and Regulations-</strong><br>
+          <ol>
+            <li>1. Each participant can appear for the first round.</li>
+            <li>2. 3 images will be displayed after a particular duration for the first round.</li>
+            <li>3. The participants will be shortlisted for the second round based on the performance in the first
+              round.</li>
+            <li>4. The shortlisted participants are expected to deal with a series of images in the second round.</li>
+            <li>5. The decision of the judges will be final and binding on all participants.</li>
+          </ol><br>
+          <strong>Team Distribution-</strong><br>
+          <ol>
+            <li>FE/SE/TE/BE: Individuals only</li>
+          </ol>
+          <strong>Fees:</strong> Rs.50 per person.<br><br>
+        </div>
+      </div>
+    </div>
+
+
+    <div class='box-outer element-item nontech'>
+      <div class='main_box fan' data-trigger='modal' data-target='#modal-fan'>
+        <div class='bar top'></div>
+        <div class='bar right delay'></div>
+        <div class='bar bottom delay'></div>
+        <div class='bar left'></div>
+      </div>
+      <div class="nifty-modal d-slit" id="modal-fan">
+        <div class="md-content">
+          <div class='md-title'>
+
+            <button type="button" class="md-close side" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4>Fandom</h4>
+          </div>
+
+          <strong><i>Show how much of a true fan you are!</i></strong><br>
+          A Pop Culture quiz competition consisting of famous fandom topics like Game of Thrones, Harry Potter, FRIENDS,
+          Marvel and DC. The competition consists of two rounds.<br>
+          Round 1:<br> A general quiz of duration 20 minutes.
+          <br>Round 2:<br> Buzzer Round having direct questions as well as audio visual questions.(HP,GOT,FRIENDS).
+          Debate(Marvel vs. DC)<br>
+          <br>
+          <strong>Rules and Regulations-</strong><br>
+          <ol>
+            <li>1. Every participant is allowed to appear for the first round.</li>
+            <li>2. Use of any unfair means will result in direct disqualification.</li>
+            <li>3. The decision of the organizers will be final and binding on all participants.</li>
+          </ol>
+          <br>
+          <strong>Team Distribution-</strong><br>
+          <ol>
+            <li>FE/SE/TE/BE: Individual or Team of 2</li>
+          </ol>
+          <strong>Fees: </strong>Rs.80 (Individual)<br>
+          Rs.100 (Team of 2) <br><br>
+        </div>
+      </div>
+    </div>
+
+
+    <div class='box-outer element-item nontech'>
+      <div class='main_box crb' data-trigger='modal' data-target='#modal-crb'>
+        <div class='bar top'></div>
+        <div class='bar right delay'></div>
+        <div class='bar bottom delay'></div>
+        <div class='bar left'></div>
+      </div>
+      <div class="nifty-modal d-slit" id="modal-crb">
+        <div class="md-content">
+          <div class='md-title'>
+
+            <button type="button" class="md-close side" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4>Cerebro</h4>
+          </div>
+
+          <strong><i>Be sagacious!</strong></i><br>
+          <!--<i>"There's a way out of every box; a solution to every puzzle. It's just a matter of finding it."</i><br><br>-->
+          Do you have the mettle to solve mind boggling questions and brain teasers?
+          Cerebro presents to you a great opportunity to test your logical and analytical skills.
+          The questions here will only judge your wit. Join forces, team up with your partner and prove
+          that you're the best! No need of any "general" knowledge, all that's required is a "special" brain!<br><br>
+          <strong>Rules and Regulations-</strong><br>
+          <ol>
+            <li>1. The competition will be organised in two rounds (Prelims &amp; Finals) for both the groups.</li>
+            <li>2. Each participant can appear for the first round (Prelims) only once.</li>
+            <li>3. Teams will be shortlisted for Round II (Finals) based on the performance in Round I(Prelims).</li>
+            <li>4. Use of mobile phones, internet or any electrical gadget is strictly prohibited.</li>
+            <li>5. The decision of the organizers will be final and binding on all participants.</li>
+          </ol><br>
+          <strong>Team Distribution-</strong><br>
+          <ol>
+            <li>FE-SE (Junior Team): Teams of 2</li>
+            <li>TE-BE (Senior Team): Teams of 2</li>
+            <li>Individual</li>
+          </ol>
+          <strong>Fees:</strong>
+          <ol>
+            <li>Rs. 80 /- (Non-PASC members) </li>
+            <li>Rs. 50 /- (PASC members)</li>
+          </ol><br>
+          <br>
+        </div>
+      </div>
+
+    </div>
+
+    <div class='box-outer element-item nontech'>
+      <div class='main_box qb' data-trigger='modal' data-target='#modal-qb'>
+        <div class='bar top'></div>
+        <div class='bar right delay'></div>
+        <div class='bar bottom delay'></div>
+        <div class='bar left'></div>
+      </div>
+      <div class="nifty-modal d-slit" id="modal-qb">
+        <div class="md-content">
+          <div class='md-title'>
+
+            <button type="button" class="md-close side" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4>Quiz 2 bid</h4>
+          </div>
+          <strong><i>Go BIG or go home!!</i></strong><br>
+          Ever dreamt of owning the perfect playing XI ?
+          We've got all you cricket enthusiasts a chance to create the best team
+          using strategic bidding and experience the thrill, like the IPL auction!
+          The first round will be a general quiz based on cricket. The second round of the contest will be a real-time
+          auction.
+          <br><br>
+          <strong>Rules and Regulations-</strong><br>
+          <ol>
+            <li>1. Each participant is allowed to appear for the first round.</li>
+            <li>2. Based on the score in the quiz, top twelve teams will be shortlisted to appear for the auction in the
+              second round.</li>
+            <li>3. The decision of the organizers will be final and binding on all participants.</li>
+          </ol><br>
+          <strong>Team Distribution-</strong><br>
+          <ol>
+            <li>FE/SE/TE/BE : Team of 2</li>
+          </ol>
+          <strong>Fees:</strong> Rs.100 per team.<br><br>
+        </div>
+      </div>
+
+    </div>
+
+    <div class='box-outer element-item tech'>
+      <div class='main_box web' data-trigger='modal' data-target='#modal-web'>
+        <div class='bar top'></div>
+        <div class='bar right delay'></div>
+        <div class='bar bottom delay'></div>
+        <div class='bar left'></div>
+      </div>
+      <div class="nifty-modal d-slit" id="modal-web">
+        <div class="md-content">
+          <div class='md-title'>
+
+            <button type="button" class="md-close side" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4>Web-App Development</h4>
+          </div>
+          <br><strong>The integration of information, design, and technology!</strong><br>
+          A platform to showcase your talent by making creative and unique websites or android applications in
+          accordance with the provided problem statements.
+          <br><br>
+
+          <strong>Rules and Regulations-</strong><br>
+          <ol>
+            <li>1. Problem Statements will be released on 23rd August.</li>
+            <li>2. Participants will have to upload their developed app on Github and share the link on
+              "webappdev.pulzion@gmail.com". </li>
+            <li>3. The decision of the organizers will be final and binding on all participants.</li>
+          </ol><br>
+          <strong>Team Distribution-</strong><br>
+          <ol>
+            <li>FE/SE : Team of 2 </li>
+            <li> TE/BE : Team of 2</li>
+          </ol>
+          <strong>Date:</strong> 24 - 31 Aug. <br><br>
+          <strong>Fees:</strong> Rs.100 per team.<br>
+        </div>
+      </div>
+    </div>
+
+
+    <div class='box-outer element-item nontech'>
+      <div class='main_box ps' data-trigger='modal' data-target='#modal-ps'>
+        <div class='bar top'></div>
+        <div class='bar right delay'></div>
+        <div class='bar bottom delay'></div>
+        <div class='bar left'></div>
+      </div>
+      <div class="nifty-modal d-slit" id="modal-ps">
+        <div class="md-content">
+          <div class='md-title'>
+
+            <button type="button" class="md-close side" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4>Photoshop Royale</h4>
+          </div>
+
+          <strong><i>Let your design speak for itself !!</strong></i><br>
+          Ever wondered what kind of skill you have in the world of digital imagery?
+          Ever wondered if you're the best at Image manipulation?
+          Here is your chance to prove it, and take away a sweet prize while you're at it!<br>
+          Introducing the "PhotoShop Royale"!<br>
+          Showcase your skills in this event, by making the most creative, ingenious and meaningful poster.<br>
+          The theme of the poster for first round should be the theme of Pulzion, "Time and Space "<br>
+          Top 10 people will qualify for the second round, where you have to make the poster on the topic given
+          on-the-spot. <br><br>
+          <strong>Rules and Regulations-</strong><br>
+          <ol>
+            <li>1. Send in your Posters to psroyale.pulzion@gmail.com</li>
+            <li>2. The dimensions of the poster for the first round should be 1280x720. </li>
+            <li>3. The top 10 entires get selected to round 2.</li>
+            <li>4. The Theme for the second poster will be given on-the-spot.</li>
+            <li>5. Use of Copyrighted Images is not Allowed.</li>
+          </ol>
+          <strong>Team Distributiom-</strong><br>
+          FE/SE/TE/BE: Individuals only<br>
+          <strong>Fees:</strong>Fees: Rs.50 per person.<br>
+        </div>
+      </div>
+
+    </div>
+
+    <div class='box-outer element-item work'>
+      <div class='main_box eth' data-trigger='modal' data-target='#modal-eth'>
+        <div class='bar top'></div>
+        <div class='bar right delay'></div>
+        <div class='bar bottom delay'></div>
+        <div class='bar left'></div>
+      </div>
+      <div class="nifty-modal d-slit" id="modal-eth">
+        <div class="md-content">
+          <div class='md-title'>
+
+            <button type="button" class="md-close side" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4>Ethical Hacking</h4>
+          </div>
+
+          <strong><i>Think like a thief to safe gaurd your Data and Information!</strong></i></strong><br>
+          With great advancement, comes its negative influences. Today, in this highly technologized world, everybody
+          faces the effect of growing number of system vulnerabilities. The Ethical Hacking Workshop, conducted by<b>
+            CYBERCURE Solutions</b> will prepare the participants to sustain in spite of these threats by covering all
+          topics in detail under:
+          <ol>
+            <li>1. Hacking Psychology</li>
+            <li>2. E-mails: Exploitation &amp; Security</li>
+            <li>3. OS Hacking &amp; Security</li>
+            <li>4. Malwares</li>
+            <li>5. Attacks related to network and security.</li>
+            <li>6. Web server attacks &amp; Security</li>
+            <li>7. Software reverse engineering</li>
+          </ol>
+          <strong>Date:</strong> 28, 29 September<br>
+          <strong>Fees:</strong> Rs.1700 individual<br><br>
+        </div>
+      </div>
+
+    </div>
+
+    <div class='box-outer element-item work'>
+      <div class="main_box ai" data-trigger='modal' data-target='#modal-ai'>
+        <div class='bar top'></div>
+        <div class='bar right delay'></div>
+        <div class='bar bottom delay'></div>
+        <div class='bar left'></div>
+      </div>
+      <div class="nifty-modal d-slit" id="modal-ai">
+        <div class="md-content">
+          <div class='md-title'>
+
+            <button type="button" class="md-close side" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4>AI Workshop</h4>
+          </div>
+
+          <strong><i>I'd rather see artificial intelligence than no intelligence!</strong></i></strong><br>
+          A Workshop to teach your "dumb" PC some cool tricks to keep up with the newest trends. The workshop would be
+          conducted by CYBERCURE SOLUTIONS and would cover a host of topics right from basics. So don't worry if you're
+          unsure about regression, SVM or gradient descent. We have you covered.<br><br>
+          <strong>Date:</strong> 28, 29 September<br>
+          <strong>Fees:</strong> Rs.1700 individual<br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+
+  <script>
+    new gnMenu(document.getElementById('gn-menu'));
+  </script>
+  <script>(function ($) {
+      $(document).on("click", "[data-trigger='modal'], [data-trigger='nifty']", function () {
+        var target = $(this).data("target")
+        $(target).nifty("show")
+      })
+
+      $(document).on("click", ".md-overlay", function () {
+        $(".nifty-modal.md-show").nifty("hide")
+      })
+
+      $(document).on("click", ".nifty-modal.md-show .md-close", function () {
+        $(this).closest(".nifty-modal.md-show").nifty("hide")
+      })
+
+      $.fn.extend({
+        nifty: function (cmd) {
+          var self = this;
+          var transitionEndEvents = "transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd"
+
+          var showHandler = function (animation) {
+            var handledTransitionEnd = false;
+            $(self).trigger("show.nifty.modal")
+            $(self).one(transitionEndEvents, function (event) {
+              if (!handledTransitionEnd) {
+                handledTransitionEnd = true;
+                event.preventDefault();
+                event.stopPropagation();
+                $(self).trigger("shown.nifty.modal")
+              }
+            })
+            $(self).addClass("md-show")
+          }
+
+          var hideHandler = function () {
+            var handledTransitionEnd = false;
+            $(self).trigger("hide.nifty.modal")
+            $(self).one(transitionEndEvents, function (event) {
+              if (!handledTransitionEnd) {
+                handledTransitionEnd = true;
+                event.preventDefault();
+                event.stopPropagation();
+                $(self).trigger("hidden.nifty.modal")
+              }
+            })
+            $(self).removeClass("md-show")
+          }
+
+          if (cmd == "show") {
+            showHandler();
+          } else if (cmd == "hide") {
+            hideHandler();
+          }
+
+          return this;
+        }
+      })
+    })(jQuery);</script>
+  <script>
+    function handleNiftyEvent(event) {
+      console.log(event)
+    }
+    $("#modal-1").on("show.nifty.modal", handleNiftyEvent)
+    $("#modal-1").on("shown.nifty.modal", handleNiftyEvent)
+    $("#modal-1").on("hide.nifty.modal", handleNiftyEvent)
+    $("#modal-1").on("hidden.nifty.modal", handleNiftyEvent)
+  </script>
+  <script src="./js/classie.js"></script>
+  <script src="./js/gnmenu.js"></script>
+  <script>
+    new gnMenu(document.getElementById('gn-menu'));
+    function closeNav() {
+      var x = document.getElementById("navbar");
+      x.classList.remove("gn-open-all");
+    }
+  </script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+  <script src='http://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js'></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="./js/script.js"></script>
+  <div id="particles-js"></div>
+  <script type="text/javascript" src="./js/app.js"></script>
+  <script type="text/javascript" src="./js/particles.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+body{
+	overflow-x: hidden; 
+	font-family: 'Lato', sans-serif;
+	color: #505962;
+		
+
+}
+.jumbotron{
+	border-radius: 0;
+	padding: 3rem 0 2rem;
+}
+h3.heading{
+	font-size: 50px;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding-bottom: 1rem;
+	color: white;
+	padding-top: 1rem;
+}
+#part {
+  position: fixed;
+  width: auto;
+  z-index: 50;
+  height: 102vh;
+  top: -15px;
+}
+
+.heading-underline{
+	width: 6rem;
+	height: .2rem;
+	background-color: #1ebba3;
+	margin: 0 auto 2rem;
+}
+
+/*---contact--*/
+	footer {		
+		color: white;
+		padding: 2rem 0 3rem;
+		margin-top: 1rem;
+	}
+	footer img {
+		height: 3rem;
+		margin: 1.5rem 0;
+
+	}
+
+	footer a{
+		color: white;
+	}
+
+	footer svg.svg-inline--fa{
+		font-size: 1.6rem;
+		margin: 1.2rem .5rem 0 0;
+	}
+	footer svg.svg-inline--fa:hover {
+		color: #1ebba3;
+	}
+
+	hr.socket{
+		border-top: .2rem solid #666b71;
+		width: 100%;
+	}
+  .footer1 {
+            position: absolute;
+          
+
+
+        }
+
+        .footer1 p {
+          position: relative;
+          font-size: 15px;
+           
+        }
+
+
+/*--media--*/
+
+/*============= COURSE SECTION =============*/
+
+
+
+
+@media only screen and (max-width: 400px)
+{
+       #map
+       {
+right:5%;        left: 5%;
+       }
+    
+}
+
+@media only screen and (max-width: 400px)
+{
+    h2
+    {
+      font-size: 30px;
+    }
+
+}
+h2
+{
+  font-size: 70px;font-family: Delicious; src: url('Delicious-Roman.otf');
+}
+/* map end*/
+
+
+@media screen and (max-width:600px)
+{
+
+.middle{
+	position: absolute;	
+	vertical-align: middle;
+	margin: 2rem;
+    left:-28%;
+	margin-bottom: 5px;	
+  
+
+     }
+     .font_size{
+      font-size: 1.9rem;
+     }
+}
+
+.middle{
+	position: absolute;
+	text-align: center;
+	vertical-align: middle;
+	margin-left: 33%;
+	margin-bottom: 5px;
+  z-index: 10;
+  font-size: 25px;
+}
+
+/*style2*/
+
+#part {
+  position: fixed;
+  width: auto;
+  z-index: -20;
+  height: 102vh;
+  top: -15px;
+}
+
+
+
+#particles-js {
+    
+    width: 100%;
+    height:auto;
+    overflow-x:hidden;
+    
+
+}
+@media screen and (max-width:600px)
+{
+  #particles-js
+  {
+    background-size:cover;
+    background-position:center;
+  }
+}
+.particles-js-canvas-el{
+position: fixed; top: 0; right: 0; bottom: 0; left: 0;}
+#map{
+  position: relative;
+  height: 450px;
+  width: 88%; 
+  border-radius: 10px 0px;
+   border: 1px solid black ;
+   box-shadow: 3px 0px 3px;
+   left: 5%;
+   z-index: 70;
+   
+}
+
+@media screen and (max-width:600px)
+{
+ .title2{
+  
+vertical-align: middle;
+  
+  letter-spacing: 0.001em;
+  text-transform: uppercase;
+  color:#0ff;
+
+  }
+   .title1 {
+  
+vertical-align:middle;
+ 
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:#0ff;
+
+  }
+
+}
+
+  @font-face{
+    font-family:"xs";
+    src:url("xs.TTF")format("truetype");
+  }
+  @font-face{
+    font-family:"nam";
+    src:url("nam.ttf")format("truetype");
+  }
+
+.title1 {
+  
+vertical-align: middle;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:#0ff;
+
+  }
+  .title2{
+  
+vertical-align: middle;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color:#0ff;
+
+  }
+
+
