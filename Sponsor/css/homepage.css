@@ -1,0 +1,61 @@
+body
+{
+padding:0;
+margin:0;
+
+
+
+}
+#particles-js
+{
+background-position:center;
+width:100%;
+height:auto;
+}
+#particles-js
+  {
+    width:100%;
+    height:auto;
+    overflow-x:hidden;
+  }
+
+@media screen and (max-width:600px)
+{
+  #particles-js
+  {
+   
+    background-position:center;
+  }
+}
+.particles-js-canvas-el{
+position: fixed; top: 0; right: 0; bottom: 0; left: 0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

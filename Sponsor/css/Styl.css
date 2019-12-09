@@ -1,0 +1,271 @@
+ 
+    /* CORE STYLES */
+:root {
+  --primary-color: rgba(13, 110, 139, 0.75);
+  --overlay-color: rgba(24, 39, 51 , 0.85);
+  --menu-speed: 0.75s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "xs";
+  line-height: 1.4;
+}
+.t1{
+  margin-top:5vw;
+}
+.container {
+  max-width: 960px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 3rem;
+}
+.ic{
+  font-size:150vw;
+}
+.spon{
+  font-size:3.7vw;
+  color:black;
+  text-align: center;
+  margin-top:2vw;
+}
+.rotating-box
+  {
+    width:300px;
+    height:300px;
+    margin:auto;
+    z-index:9;
+    perspective: 1000px;
+
+  }
+  .cube{
+    width:300px;
+    color: #ffffff;
+    font-size:60px;
+    text-align:center;
+    animation: rotate 15s linear infinite;
+    transform-style:preserve-3d;
+
+  }
+  .cube div
+  {
+    position:absolute;
+    width:300px;
+    height:300px;
+    font-size:1.5vw;
+  }
+  .front-side
+  {
+    transform:translateZ(150px);
+    background:#ffffff;
+  }
+  .back-side
+  {
+    transform:rotateY(180deg)
+    translateZ(150px);
+    background:#ffffff;
+  }
+  .left-side
+  { 
+
+    transform:rotateY(90deg)
+    translateX(-150px);
+    background:#ffffff;
+    transform-origin: left;
+
+  }
+.right-side
+  {
+    transform:rotateY(90deg)
+    translateX(150px);
+    background:#ffffff;
+    transform-origin:right;
+  }
+  .top-side
+  {
+    transform:rotateX(90deg)
+    translateY(-150px);   
+    background:#ffffff;
+    transform-origin:top;
+  }
+  .bottom-side
+  {
+    transform:rotateX(90deg)
+    translateY(150px);
+    background:#ffffff;
+    transform-origin:bottom;
+  }
+      @media only screen and (max-width:1300px) 
+  {/* For mobile phones: */.rotating-box
+  {
+    width:20vw;
+    height:20vw;
+    margin:auto;
+    perspective: 120vw;
+  }
+  .cube{
+    width:20vw;
+    color: #ffffff;
+    font-size:40px;
+    text-align:center;
+    animation: rotate 15s linear infinite;
+    transform-style:preserve-3d;
+  }
+  .cube div
+  {
+    position:absolute;
+    width:20vw;
+    height:20vw;
+    font-size:1.7vw;
+  }
+  .front-side
+  {
+    transform:translateZ(10vw);
+    background:#ffffff;
+  }
+  .back-side
+  {
+    transform:rotateY(180deg)
+    translateZ(10vw);
+    background:#ffffff;
+  }
+  .left-side
+  {
+    transform:rotateY(90deg)
+    translateX(-10vw);
+    background:#ffffff;
+    transform-origin: left;
+  }
+.right-side
+  {
+    transform:rotateY(90deg)
+    translateX(10vw);
+    background:#ffffff;
+    transform-origin:right;
+  }
+  .top-side
+  {
+    transform:rotateX(90deg)
+    translateY(-10vw);   
+    background:#ffffff;
+    transform-origin:top;
+  }
+  .bottom-side
+  {
+    transform:rotateX(90deg)
+    translateY(10vw);
+    background:#ffffff;
+    transform-origin:bottom;
+  }
+
+  }
+  @keyframes rotate{
+    0%{transform:rotateY(0);}
+    100%{transform:rotateY(360deg);}
+  }
+
+  @media only screen and (max-width:575.5px) 
+  {/* For mobile phones: */
+    .spon{
+  font-size:8vw;
+  color:black;
+}
+    .t1{
+      margin-top:3vw;
+    }
+    .rotating-box
+  {
+    width:40vw;
+    height:40vw;
+    perspective: 120vw;
+  }
+  .cube{
+    width:40vw;
+    color: #ffffff;
+    font-size:40px;
+    text-align:center;
+    animation: rotate 15s linear infinite;
+    transform-style:preserve-3d;
+  }
+  .cube div
+  {
+    position:absolute;
+    width:40vw;
+    height:40vw;
+    font-size:3.5vw;
+  }
+  .front-side
+  {
+    transform:translateZ(20vw);
+    background:#ffffff;
+  }
+  .back-side
+  {
+    transform:rotateY(180deg)
+    translateZ(20vw);
+    background:#ffffff;
+  }
+  .left-side
+  {
+    transform:rotateY(90deg)
+    translateX(-20vw);
+    background:#ffffff;
+    transform-origin: left;
+  }
+.right-side
+  {
+    transform:rotateY(90deg)
+    translateX(20vw);
+    background:#ffffff;
+    transform-origin:right;
+  }
+  .top-side
+  {
+    transform:rotateX(90deg)
+    translateY(-20vw);   
+    background:#ffffff;
+    transform-origin:top;
+  }
+  .bottom-side
+  {
+    transform:rotateX(90deg)
+    translateY(20vw);
+    background:#ffffff;
+    transform-origin:bottom;
+  }
+  .co{
+    margin-top:30vw;
+  }
+  .c1
+  {
+    margin-top:10vw;
+  }
+  .c2
+  {
+    margin-top: 20vw;
+  }
+  .display-1{
+    margin-top:4vw;
+  }
+}
+  .display-1{
+    font-size:10vw;
+    z-index: 9999;
+  }
+/*Particles*/
+#part {
+  position: fixed;
+  width: auto;
+  z-index: -20;
+  height: 102vh;
+  top: -15px;
+}
+#particles-js {
+  position: fixed;
+  width: 100%;
+}
